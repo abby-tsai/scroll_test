@@ -1,0 +1,297 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .circle-box {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 840px;
+      overflow-x: hidden;
+    }
+
+    .loader {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1px solid #e6e6e6;
+      background: linear-gradient(45deg, #fff,
+          #fff 40%, #dfdfdf);
+      animation: animate 3s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .middle {
+      position: relative;
+    }
+
+    .up-text {
+      position: absolute;
+      /* width: 100px;
+      height: 100px; */
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      background: linear-gradient(45deg, #fff,
+          #fff 40%, rgb(204, 204, 204));
+      border-radius: 50%;
+      box-shadow: 4px 4px 9px rgb(0 0 0 / 30%);
+    }
+
+    .out-dots {
+      /* --n: 30; */
+      /* dash 的數量 */
+      /* --d: 4deg; */
+      /* dash 之間的間隔 */
+      /* --b: 2px; */
+      /* dash 的寬度 */
+      /* --c: #000; */
+      /* dash 的顏色 */
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 100%;
+      display: inline-block;
+      border-radius: 50%;
+      background: repeating-conic-gradient(var(--c) 0 calc(360deg/var(--n) - var(--d)), transparent 0 calc(360deg/var(--n)));
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+      mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+      transform: scale(1.3);
+    }
+
+    /* keep the element square */
+    .out-dots:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+
+    .circle-list li {
+      position: absolute;
+      background-image: url(circle.png);
+      background-size: 291px 442px;
+      background-repeat: no-repeat;
+      transition: .3s ease all;
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+
+      /* 這裡是放2倍大的圖片（mac、iphone用的圖片）css... */
+      .circle-list li {
+        background-image: url(circle@2x.png);
+      }
+    }
+
+    /* 1 */
+    .circle-list li:nth-child(1),
+    .circle-list li.off:nth-child(1) {
+      width: 280px;
+      height: 260px;
+      background-position: -25px 16px;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: var(--c-rotate-b);
+    }
+
+    .circle-list li.on:nth-child(1) {
+      animation: circleFadeIn linear forwards;
+      animation-duration: var(--c-duration);
+      animation-delay: var(--c-delay);
+    }
+
+    .circle-list li:nth-child(1) .line,
+    .circle-list li.off:nth-child(1) .line {
+      height: 2px;
+      background-color: #fe6f6f;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+    }
+
+    .circle-list li.on:nth-child(1) .line {
+      animation: lineOut linear forwards;
+      animation-duration: var(--l-duration);
+      animation-delay: calc(var(--c-duration) + var(--c-delay));
+    }
+
+    .circle-list li:nth-child(1) .line .dot,
+    .circle-list li.off:nth-child(1) .line .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #fe6f6f;
+      border-radius: 100%;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      margin: -6px;
+      opacity: 0;
+    }
+
+    .circle-list li.on:nth-child(1) .line .dot {
+      animation: dotFadeIn linear forwards;
+      animation-duration: var(--d-duration);
+      animation-delay: calc(var(--c-duration) + var(--l-duration) + var(--c-delay));
+    }
+
+
+    /* 2 */
+    .circle-list li:nth-child(2),
+    .circle-list li.off:nth-child(2) {
+      width: 280px;
+      height: 260px;
+      background-position: -25px 16px;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: var(--c-rotate-b);
+    }
+
+    .circle-list li.on:nth-child(2) {
+      animation: circleFadeIn linear forwards;
+      animation-duration: var(--c-duration);
+      animation-delay: var(--c-delay);
+    }
+
+    .circle-list li:nth-child(2) .line,
+    .circle-list li.off:nth-child(2) .line {
+      height: 2px;
+      background-color: #fe6f6f;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+    }
+
+    .circle-list li.on:nth-child(2) .line {
+      animation: lineOut linear forwards;
+      animation-duration: var(--l-duration);
+      animation-delay: calc(var(--c-duration) + var(--c-delay));
+    }
+
+    .circle-list li:nth-child(2) .line .dot,
+    .circle-list li.off:nth-child(2) .line .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #fe6f6f;
+      border-radius: 100%;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      margin: -6px;
+      opacity: 0;
+    }
+
+    .circle-list li.on:nth-child(2) .line .dot {
+      animation: dotFadeIn linear forwards;
+      animation-duration: var(--d-duration);
+      animation-delay: calc(var(--c-duration) + var(--l-duration) + var(--c-delay));
+    }
+
+
+    /* 3 */
+    .circle-list li:nth-child(3),
+    .circle-list li.off:nth-child(3) {
+      width: 280px;
+      height: 260px;
+      background-position: -25px 16px;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: var(--c-rotate-b);
+    }
+
+    .circle-list li.on:nth-child(3) {
+      animation: circleFadeIn linear forwards;
+      animation-duration: var(--c-duration);
+      animation-delay: var(--c-delay);
+    }
+
+    .circle-list li:nth-child(3) .line,
+    .circle-list li.off:nth-child(3) .line {
+      height: 2px;
+      background-color: #fe6f6f;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+    }
+
+    .circle-list li.on:nth-child(3) .line {
+      animation: lineOut linear forwards;
+      animation-duration: var(--l-duration);
+      animation-delay: calc(var(--c-duration) + var(--c-delay));
+    }
+
+    .circle-list li:nth-child(3) .line .dot,
+    .circle-list li.off:nth-child(3) .line .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #fe6f6f;
+      border-radius: 100%;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      margin: -6px;
+      opacity: 0;
+    }
+
+    .circle-list li.on:nth-child(3) .line .dot {
+      animation: dotFadeIn linear forwards;
+      animation-duration: var(--d-duration);
+      animation-delay: calc(var(--c-duration) + var(--l-duration) + var(--c-delay));
+    }
+
+
+
+
+    @keyframes circleFadeIn {
+      0% {
+        opacity: 0;
+        transform: var(--c-rotate-b);
+      }
+
+      100% {
+        opacity: 1;
+        transform: var(--c-rotate-a);
+      }
+    }
+
+    @keyframes lineOut {
+      0% {
+        width: 0;
+      }
+
+      100% {
+        width: 125px;
+      }
+    }
+
+    @keyframes dotFadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
