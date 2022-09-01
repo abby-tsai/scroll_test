@@ -111,7 +111,7 @@
 
     .circle-list li {
       position: absolute;
-      background-image: url(circle.png);
+      background-image: url(../circle.png);
       background-size: 291px 442px;
       background-repeat: no-repeat;
       transition: .3s ease all;
@@ -122,7 +122,7 @@
 
       /* 這裡是放2倍大的圖片（mac、iphone用的圖片）css... */
       .circle-list li {
-        background-image: url(circle@2x.png);
+        background-image: url(../circle@2x.png);
       }
     }
 
