@@ -1,5 +1,5 @@
 
-var card_1 = document.querySelector("#card_1");
+var card_1 = document.querySelectorAll(".circle-list li");
 var offset_1 = card_1.getBoundingClientRect();
 
 // 物件只要在畫面的範圍，就跑動畫
