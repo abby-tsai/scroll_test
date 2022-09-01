@@ -39,6 +39,74 @@
 <body>
   <p>往下滑</p>
   <div style="padding:1000px 0;">
+    
+    
+  <div class="circle-box">
+
+    <!--  對照用 -->
+    <div style="position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -50%);
+    opacity: 0;
+    ">
+      <img src="bg.png" alt="" width="1140px"></div>
+
+    <div class="middle">
+      <div class="loader"></div>
+      <div class="up-text"></div>
+      <div class="out-dots" style="
+        --n: 90;
+        --d: 3deg;
+        --b: 3px;
+        width: 100%;
+        --c: #777;"></div>
+    </div>
+    <div class="circle-list">
+      <ul>
+        <li class="on" style="
+          --c-rotate-b: translate(320px, 12px) rotate(18deg);
+          --c-rotate-a: translate(300px, 0px) rotate(18deg);
+
+          --c-delay: 0s;
+          --c-duration: .2s;
+          --l-duration: .2s;
+          --d-duration: .1s;">
+
+          <span class="line">
+            <span class="dot"></span>
+          </span>
+        </li>
+        <li class="on" style="
+          --c-rotate-b: translate(330px, -130px) rotate(0deg);
+          --c-rotate-a: translate(300px, -130px) rotate(0deg);
+
+          --c-delay: 0.35s;
+          --c-duration: .2s;
+          --l-duration: .2s;
+          --d-duration: .1s;">
+          <span class="line">
+            <span class="dot"></span>
+          </span>
+        </li>
+        <li class="on" style="
+          --c-rotate-b: translate(300px, -270px) rotate(-18deg);
+          --c-rotate-a: translate(300px, -270px) rotate(-18deg);
+
+          --c-delay: 0.7s;
+          --c-duration: .2s;
+          --l-duration: .2s;
+          --d-duration: .1s;">
+          <span class="line">
+            <span class="dot"></span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+    
+    
+    
     <div id="card_1">
       <img src="https://images.unsplash.com/photo-1657214058744-7ff3b448c205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80" width="200px">
     </div>
