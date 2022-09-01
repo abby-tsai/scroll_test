@@ -1,4 +1,30 @@
-    * {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #card_1 img {
+  opacity: 0;
+}
+
+#card_1.on img {
+  animation-name: fadeIn_big;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn_big {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(100px);
+  }
+}    
+
+* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
